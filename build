@@ -4,7 +4,7 @@ cd /tmp/rom
 
 # Normal build
 . build/envsetup.sh
-lunch nitrogen_certus-userdebug
+lunch fluid_certus-userdebug
 export SELINUX_IGNORE_NEVERALLOWS=true
 
 up(){
@@ -13,13 +13,12 @@ up(){
 
 make_metalava(){
 	make api-stubs-docs
-	make hiddenapi-lists-docs
 	make system-api-stubs-docs
 	make test-api-stubs-docs
 }
 
 make_rom(){
-	make -j16 otapackage
+	make bacon -j16
 	zip=$(up out/target/product/certus/*zip)
 	echo " "
 	echo "$zip"
