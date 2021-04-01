@@ -22,6 +22,6 @@ task:
       - ./sync
     build_script:
       - ./build
-    upload_ccache_script:
-      - ./upload_ccache
+#    upload_ccache_script:
+#      - ./upload_ccache
       
