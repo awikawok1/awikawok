@@ -25,7 +25,7 @@ make_metalava(){
 }
 
 make_rom(){
-	make -j8 otapackage
+	make -j16 otapackage
 	zip=$(up out/target/product/certus/*zip)
 	echo " "
 	echo "$zip"
@@ -36,4 +36,4 @@ make_rom(){
 
 make_metalava
 make_rom &
-sleep 4200 && kill "$!"
+sleep 30m && kill "$!"
